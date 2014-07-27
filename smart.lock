@@ -6,7 +6,8 @@
       "scss": {},
       "sugar": {},
       "zf5": {},
-      "font-awesome": {}
+      "font-awesome": {},
+      "foundation5-sass": {}
     },
     "packages": {
       "iron-router": {
@@ -33,6 +34,11 @@
         "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
         "tag": "v4.1.0",
         "commit": "ce6b1e92715d1938babc5d69c655c17e387f5926"
+      },
+      "foundation5-sass": {
+        "git": "https://github.com/lgollut/meteor-foundation5-sass.git",
+        "tag": "v0.0.13",
+        "commit": "10fed6a3c7edbbce6bd234ed41ca2b23ba4cf1cf"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
