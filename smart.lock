@@ -5,7 +5,8 @@
       "iron-router": {},
       "scss": {},
       "sugar": {},
-      "zf5": {}
+      "zf5": {},
+      "font-awesome": {}
     },
     "packages": {
       "iron-router": {
@@ -27,6 +28,11 @@
         "git": "https://github.com/juliancwirko/meteor-zf5.git",
         "tag": "v0.0.7",
         "commit": "eb340d279fc2657f8d006e91c74039e80c4029fc"
+      },
+      "font-awesome": {
+        "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
+        "tag": "v4.1.0",
+        "commit": "ce6b1e92715d1938babc5d69c655c17e387f5926"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
