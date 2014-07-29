@@ -5,6 +5,7 @@
     "sugar": {},
     "zf5": {},
     "font-awesome": {},
-    "foundation5-sass": {}
+    "foundation5-sass": {},
+    "foundation": {}
   }
 }

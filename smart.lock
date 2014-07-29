@@ -7,7 +7,8 @@
       "sugar": {},
       "zf5": {},
       "font-awesome": {},
-      "foundation5-sass": {}
+      "foundation5-sass": {},
+      "foundation": {}
     },
     "packages": {
       "iron-router": {
@@ -39,6 +40,11 @@
         "git": "https://github.com/lgollut/meteor-foundation5-sass.git",
         "tag": "v0.0.13",
         "commit": "10fed6a3c7edbbce6bd234ed41ca2b23ba4cf1cf"
+      },
+      "foundation": {
+        "git": "https://github.com/ewall/meteor-foundation.git",
+        "tag": "v5.3.1",
+        "commit": "fcf10ccc5286dac293b5fa57980593eea6441d41"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
