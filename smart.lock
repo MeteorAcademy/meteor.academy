@@ -5,10 +5,7 @@
       "iron-router": {},
       "scss": {},
       "sugar": {},
-      "zf5": {},
       "font-awesome": {},
-      "foundation5-sass": {},
-      "foundation": {},
       "bourbon": {},
       "neat": {}
     },
@@ -28,25 +25,10 @@
         "tag": "v0.1.7",
         "commit": "eef2d45055fabeb27c003f39bb36b97a361b4455"
       },
-      "zf5": {
-        "git": "https://github.com/juliancwirko/meteor-zf5.git",
-        "tag": "v0.0.7",
-        "commit": "eb340d279fc2657f8d006e91c74039e80c4029fc"
-      },
       "font-awesome": {
         "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
         "tag": "v4.1.0",
         "commit": "ce6b1e92715d1938babc5d69c655c17e387f5926"
-      },
-      "foundation5-sass": {
-        "git": "https://github.com/lgollut/meteor-foundation5-sass.git",
-        "tag": "v0.0.13",
-        "commit": "10fed6a3c7edbbce6bd234ed41ca2b23ba4cf1cf"
-      },
-      "foundation": {
-        "git": "https://github.com/ewall/meteor-foundation.git",
-        "tag": "v5.3.1",
-        "commit": "fcf10ccc5286dac293b5fa57980593eea6441d41"
       },
       "bourbon": {
         "git": "https://github.com/chicagogrooves/meteor-bourbon.git",
