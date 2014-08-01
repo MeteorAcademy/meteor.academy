@@ -4,4 +4,31 @@
       <p>Hitch Your Wagon to Meteor for Great Wealth and Beauty!</p>
       <a href="#about">Learn More</a>
    </div><!-- end .hero -->
+
+   <ul class="tabs">
+       <li class="active"><a data-tab="#tab1" href="#">Superheroes</a></li>
+       <li><a data-tab="#tab2" href="#">Ice Cream</a></li>
+       <li><a data-tab="#tab3" href="#">Seasons</a></li>
+   </ul>
+
+   <div class="tabs-content">
+       <div class="tabs-pane active" id="tab1">
+           Superheros
+           ...
+       </div>
+
+       <div class="tabs-pane" id="tab2">
+           Ice Cream
+           ...
+       </div>
+
+       <div class="tabs-pane" id="tab3">
+           Seasons
+           ...
+       </div>
+   </div>
+
+   <script>
+      tabby.init();
+   </script>
 </template>
