@@ -8,7 +8,9 @@
    <ul class="tabs">
        <li class="active"><a data-tab="#intro" href="#">Introduction</a></li>
        <li><a data-tab="#chapter0" href="#">Chapter 0</a></li>
-       <li><a data-tab="#chapter1" href="#">Chapter 1</a></li>
+       {{#if currentUser}}
+         <li><a data-tab="#chapter1" href="#">Chapter 1</a></li>
+       {{/if}}
    </ul>
 
    <div class="tabs-content">
@@ -20,9 +22,11 @@
            {{> zero}}
        </div>
 
-       <div class="tabs-pane" id="chapter1">
-           {{> one}}
-       </div>
+       {{#if currentUser}}
+          <div class="tabs-pane" id="chapter1">
+              {{> one}}
+          </div>
+       {{/if}}
    </div>
 
    <script>

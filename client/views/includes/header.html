@@ -15,7 +15,12 @@
          </ul>
 
          <ul class="right">
-            <li><a href="{{pathFor 'login'}}">Login</a></li>
+            <!-- <li><a href="{{pathFor 'login'}}">Login</a></li> -->
+            {{#if currentUser}}
+               {{> logout}}
+            {{else}}
+               <li><a href="{{pathFor 'login'}}">Login</a></li>
+            {{/if}}
          </ul>
       </nav>
    </header>
