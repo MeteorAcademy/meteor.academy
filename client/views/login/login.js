@@ -1,5 +1,6 @@
 Template.login.events({
-   'submit form': function(event, template) {
+   'submit .login': function(event, template) {
       event.preventDefault();
+      Router.go('home');
    }
 })
