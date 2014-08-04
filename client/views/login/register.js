@@ -7,7 +7,7 @@ Template.register.events({
 
       Accounts.createUser({email: email, password: password}, function(error) {
          if (error) {
-            console.log('User was not registered.');
+            console.log('ERROR:  User was not registered.');
          }
          else {
             console.log('User was registered successfully.');

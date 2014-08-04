@@ -7,7 +7,7 @@ Template.login.events({
 
       Meteor.loginWithPassword(email, password, function(error) {
          if (error) {
-            console.log('ERROR ERROR ERROR!');
+            console.log('ERROR:  User is not logged in!');
          }
          else {
             console.log('User is logged in.');
