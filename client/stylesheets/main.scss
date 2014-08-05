@@ -4,6 +4,19 @@
 @import "tabby.css";
 @import "astro-navbar-plus.css";
 
+// Font Variables
+$jubilat: "jubilat", Times, serif;
+$proxima: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+
+// Global
+body {
+   font-family: $proxima;
+   font-size: 150%;
+   h1, h2, h3, h4, h5, h6 {
+      font-family: $jubilat;
+   }
+}
+
 // Main
 .hero {
    text-align: center;
