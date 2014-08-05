@@ -1,9 +1,11 @@
 <template name="home">
-   <div class="hero">
-      <h2>Meteor Academy</h2>
-      <p>Hitch Your Wagon to Meteor for Great Wealth and Beauty!</p>
-      <a href="{{pathFor 'about'}}"><button>Learn More!</button></a>
-   </div><!-- end .hero -->
+   {{#unless currentUser}}
+      <div class="hero">
+         <h2>Meteor Academy</h2>
+         <p>Hitch Your Wagon to Meteor for Great Wealth and Beauty!</p>
+         <a href="{{pathFor 'about'}}"><button>Learn More!</button></a>
+      </div><!-- end .hero -->
+   {{/unless}}
 
    <section>
       <aside>
