@@ -23,6 +23,7 @@ body {
    font-family: $proxima;
    font-size: 150%;
    h1, h2, h3, h4, h5, h6 {
+      color: $grey;
       font-family: $jubilat;
       font-weight: 600;
       line-height: 200%;
@@ -67,4 +68,9 @@ section {
    .content {
       @include span-columns(10);
    }
+}
+
+// Footer
+footer {
+   text-align: center;
 }
