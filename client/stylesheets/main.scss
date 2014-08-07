@@ -11,6 +11,7 @@ $proxima: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
 // Color Variables
 $grey: #423B3C;
 $darkgrey: darken($grey, 75%);
+$lightgrey: lighten($grey, 25%);
 $red: #E24137;
 $white: #FEFEFE;
 $yellow: #F9CD3B;
@@ -25,6 +26,9 @@ body {
       font-family: $jubilat;
       font-weight: 600;
       line-height: 200%;
+   }
+   a {
+      color: $lightgrey;
    }
    button {
       background-color: $red;
