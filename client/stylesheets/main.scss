@@ -8,8 +8,17 @@
 $jubilat: "jubilat", Times, serif;
 $proxima: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
 
+// Color Variables
+$grey: #423B3C;
+$darkgrey: darken($grey, 75%);
+$red: #E24137;
+$white: #FEFEFE;
+$yellow: #F9CD3B;
+
 // Global
 body {
+   background-color: $white;
+   color: $grey;
    font-family: $proxima;
    font-size: 150%;
    h1, h2, h3, h4, h5, h6 {
@@ -17,11 +26,30 @@ body {
       font-weight: 600;
       line-height: 200%;
    }
+   button {
+      background-color: $red;
+   }
 }
+
+.container {
+   padding: 60px;
+}
+
+// Header
 
 // Main
 .hero {
+   background-color: $grey;
+   border-radius: 5px;
+   color: $white;
+   margin-bottom: 60px;
+   padding: 30px;
    text-align: center;
+   img {
+      margin: 0 -65px 0 -20px;
+      vertical-align: bottom;
+      width: 150px;
+   }
 }
 section {
    aside {
