@@ -1,5 +1,63 @@
 <template name="introduction">
    <article>
       <h2>Introduction</h2>
+
+      <p>
+         Greetings fellow Meteorites, and thanks for checking out Meteor Academy!
+         I'm <a href="http://ciara.io" target="_blank">Ciara</a>, and I'll be your
+         tour guide through this awesome journey.  Together, we'll build upwards
+         of five web applications &mdash; all with <a href="http://www.meteor.com"
+         target="_blank">Meteor</a>, a revolutionary web development framework
+         created to make software/web engineering <a href="https://www.meteor.com/about/mission" target="_blank">
+         faster and easier than ever</a>!
+      </p>
+
+      <p>
+         But, just so you know, Meteor Academy isn't actually an academy, or an
+         institution at all.  It's also not officially associated with the
+         <a href="http://www.meteor.com" target="_blank">Meteor Development Group</a>.
+         Rather, Meteor Academy is a series of tutorials of increasing complexity to
+         help beginners put together a comprehensive portfolio of starter apps to build upon.
+      </p>
+
+      <p>
+         Also, Meteor Academy isn't an altruistic endeavor.  It's a way for me to contribute
+         back to the community that has given me so much &mdash; not to mention, working
+         on Meteor Academy means I can increase what Hacker School calls my "code radius."
+         In other words, I'm learning by teaching and loving it!
+      </p>
+
+      <p>
+         <strong>And before you ask, Meteor Academy is 100%, no strings attached FREE.</strong>  All the
+         applications we'll be building will be permanently available on <a href="https://github.com/MeteorAcademy" target="_blank">GitHub</a>
+         for your review.  The Meteor Academy website is also open source, so don't hesitate to
+         create GitHub issues when you come across troublesome code or functionality.
+         (And trust me, you will.)  Otherwise, if your issue is security-related, feel free
+         to email me at hello@meteor.academy.
+      </p>
+
+      <p>
+         Last, but not least, if you'd like to support the further development of Meteor
+         Academy, please consider contributing to my <a href="https://www.gittip.com/ciaraburkett/">Gittip</a>!  Your gracious gift will
+         allow me to continue learning and sharing full-time while covering the basics
+         (rent, groceries, utilities, existence) while reaching for the starts (attending
+         conferences across the country, devshops, and hackathons)!
+      </p>
+
+      <p>
+         So.  Thanks again for checking out Meteor Academy.  Ready?  Let's go!
+      </p>
+
+      <p>
+         ʕ•ᴥ•ʔ <br>
+         Ciara
+      </p>
+
+      {{#unless currentUser}}
+         <p>
+            P.S. &ndash; What are you waiting for? <a href="{{pathFor 'register'}}">Register
+            for an account</a> now and get started!
+         </p>
+      {{/unless}}
    </article>
 </template>
