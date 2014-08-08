@@ -6,6 +6,7 @@ a problem (and you will).
 For security-related issues, however, please email me at hello@meteor.academy.
 
 ## TODOS
+* Alerts/Error messages
 * Sign in with Meteor Developer Account
 * User profiles
 * Admin
