@@ -78,6 +78,7 @@ article {
    }
    ol {
       @extend %default-ol;
+      list-style-type: decimal;
    }
 }
 
