@@ -76,6 +76,9 @@ article {
       color: $darkgrey;
       font-weight: 600;
    }
+   ol {
+      @extend %default-ol;
+   }
 }
 
 // Footer
