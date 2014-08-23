@@ -44,6 +44,7 @@ body {
 header {
    h1 {
       font-size: 100%;
+      margin: 0;
    }
 }
 
@@ -72,6 +73,7 @@ section {
 
 // Article
 article {
+   margin-bottom: 200px;
    a {
       color: $darkgrey;
       font-weight: 600;
