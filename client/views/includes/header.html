@@ -14,7 +14,7 @@
                {{#if currentUser}}
                   {{> logout}}
                {{else}}
-                  <li><a href="{{pathFor 'login'}}"><i class="fa fa-lock"></i></a></li>
+                  {{> login}}
                {{/if}}
             </ul>
          </div>
