@@ -13,3 +13,5 @@ houston
 accounts-base
 accounts-meteor-developer
 spiderable
+accounts-ui
+accounts-password

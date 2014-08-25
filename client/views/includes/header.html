@@ -11,11 +11,12 @@
                <li><a href="http://www.medium.com/@MeteorAcademy" target="_blank">Blog</a></li>
                <li><a href="{{pathFor 'contact'}}">Contact</a></li>
                <li><a href="{{pathFor 'support'}}">Support</a></li>
-               {{#if currentUser}}
+               {{> loginButtons align="right"}}
+               <!-- {{#if currentUser}}
                   {{> logout}}
                {{else}}
                   {{> login}}
-               {{/if}}
+               {{/if}} -->
             </ul>
          </div>
       </nav>
