@@ -6,7 +6,6 @@
       "scss": {},
       "sugar": {},
       "font-awesome": {},
-      "bourbon": {},
       "neat": {},
       "houston": {}
     },
@@ -18,8 +17,8 @@
       },
       "scss": {
         "git": "https://github.com/fourseven/meteor-scss.git",
-        "tag": "v0.9.3",
-        "commit": "185f3b2787fb85e653f7b7bf603d1493ed14943d"
+        "tag": "v0.9.4",
+        "commit": "b5ebfe2bb8a58a03966b6f49e185544a0233ddb0"
       },
       "sugar": {
         "git": "https://github.com/bevanhunt/meteor-sugar.git",
@@ -30,11 +29,6 @@
         "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
         "tag": "v4.1.0",
         "commit": "ce6b1e92715d1938babc5d69c655c17e387f5926"
-      },
-      "bourbon": {
-        "git": "https://github.com/chicagogrooves/meteor-bourbon.git",
-        "tag": "v3.1.8.1",
-        "commit": "b55f0968fe7d4a2886898cd8e81394de066a3ae1"
       },
       "neat": {
         "git": "https://github.com/chicagogrooves/meteor-neat.git",
