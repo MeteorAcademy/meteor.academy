@@ -4,6 +4,12 @@
          Chapter 1:
          <small>Your First Website</small>
       </h2>
+      <span>
+         <i class="fa fa-code"></i> Beginner
+         <i class="fa fa-clock-o"></i> 5 min.
+      </span>
+
+      <img src="ichiban.png">
 
       <p>
          <a href="http://ichiban.meteor.com" target="_blank">Ichiban</a> is a single
@@ -12,34 +18,130 @@
 
       <ol>
          <li>
-            Open Command-Line Interface
+            <p>
+               Open your program for interacting with the command line (Terminal for Mac).
+               The code samples starting with '$' are the commands you'll be using for
+               developing your Meteor application.
+            </p>
          </li>
          <li>
             <code>
                $ mkdir Projects && cd Projects
             </code>
+            <p>
+               If you don't already have a directory for your projects, create one now and
+               'change' into it using the above command.  Assuming you go through the
+               entirety of Meteor Academy, you're going to need a central location for all
+               of your projects.  Use whatever name suits you best.
+            </p>
          </li>
 
          <li>
             <code>
                $ meteor create ichiban.meteor.com
             </code>
+
+            <p>
+               In your Projects directory, use the 'meteor' command to create your first
+               website.  Generally, I like to give my Meteor applications names that include
+               *.meteor.com as a subdomain.  If you prefer to name your project simply
+               'ichiban,' that's perfectly fine.  Or maybe you want to give your project
+               a completely different name!  Remember, this is your project and you're
+               free to do whatever you want with it.  The more you personalize tutorials,
+               the likelier you are to remember the concepts you've learned.
+            </p>
+
+            <p>
+               In less than a second, Ichiban will be ready for you.  If all has gone well,
+               the command-line should return the following:
+            </p>
+
+            <code>
+               <pre>
+                  ichiban.meteor.com: created.
+
+                  To run your new app:
+                     cd ichiban.meteor.com
+                     meteor
+               </pre>
+            </code>
+
+            <p>
+               If this doesn't work for you, copy the error from the command-line and Google
+               it.  It's very likely someone else has come across the same issue, and the
+               Meteor community does its best to respond to those who need help.
+            </p>
          </li>
 
          <li>
             <code>
                $ cd ichiban.meteor.com && meteor
             </code>
-         </li>
 
-         <li>
-            Go to localhost:3000 in browser, click button
-         </li>
+            <p>
+               Now it's time to take a look at what we've got.  Change into your Ichiban
+               directory and use the 'meteor' command to start your local development
+               server.  The command-line should return something like the following:
+            </p>
 
-         <li>
             <code>
-               $ mv ichiban.meteor.com.* main.*
+               <pre>
+                  [[[[[ ~/Desktop/Projects/ichiban.meteor.com ]]]]]
+
+                  => Started proxy.
+                  => Started MongoDB.
+                  => Started your app.
+
+                  => App running at: http://localhost:3000/
+               </pre>
             </code>
+
+            <p>
+               If you get an error, you know what to do! ʕ•ᴥ-ʔ
+            </p>
+         </li>
+
+         <li>
+            <p>
+               Now go to http://localhost:3000 in a modern browser (preferably Google
+               Chrome) to check out the tiny default application Meteor gives you.  Assuming
+               you're using the latest version of Meteor (0.9.1 as of this writing), you
+               should see the following:
+            </p>
+
+            <img src="welcometometeor.png">
+
+            <p>
+               If your curiosity hasn't already gotten the best of you, click the 'Click Me'
+               button and see what happens.  Pretty cool, right?  Each time the button is pressed,
+               the number is instantly incremented by 1.
+            </p>
+         </li>
+
+         <li>
+            <p>
+               Now, leaving your local server running, open a new tab in your terminal. The
+               new tab should start in the same directory as your project.  From here, you
+               can open Ichiban in your favorite text editor.
+            </p>
+
+            <p>
+               For instance, if you've installed <a href="http://atom.io">Atom</a>, type
+               <code>$ atom .</code> in your project directory.
+            </p>
+         </li>
+
+         <li>
+            <p>
+               In your text editor, you'll notice you have three files named after your
+               project.  In my case, ichiban.meteor.com.css, ichiban.meteor.com.html, and
+               ichiban.meteor.com.js.
+            </p>
+
+            <p>
+               After you take a gander at the contents of each file, select the .js file
+               and delete it.  Yup.  Delete it.  It's okay, we don't need it.
+            </p>
          </li>
 
          <li>
