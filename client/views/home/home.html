@@ -1,42 +1,36 @@
 <template name="home">
-   {{#unless currentUser}}
-      <div class="hero">
-         <img src="meteor-academy-small.png">
-         <p>Hitch Your Wagon to Meteor for Great Wealth and Beauty!</p>
-         <a href="{{pathFor 'about'}}"><button>Learn More!</button></a>
-      </div><!-- end .hero -->
-   {{/unless}}
+   <div class="hero">
+      <img src="meteor-academy-small.png">
+      <p>Hitch Your Wagon to Meteor for Great Wealth and Beauty!</p>
+      <a href="{{pathFor 'about'}}"><button>Learn More!</button></a>
+   </div><!-- end .hero -->
 
    <section>
       <aside>
          <ul class="tabs">
-             <li class="active"><a data-tab="#intro" href="#">Introduction</a></li>
-             <li><a data-tab="#chapter0" href="#">Chapter 0</a></li>
-             {{#if currentUser}}
-               <li><a data-tab="#chapter1" href="#">Chapter 1</a></li>
-               <li><a data-tab="#chapter2" href="#">Chapter 2</a></li>
-             {{/if}}
+            <li class="active"><a data-tab="#intro" href="#">Introduction</a></li>
+            <li><a data-tab="#chapter0" href="#">Chapter 0</a></li>
+            <li><a data-tab="#chapter1" href="#">Chapter 1</a></li>
+            <li><a data-tab="#chapter2" href="#">Chapter 2</a></li>
          </ul>
       </aside>
       <div class="content">
          <div class="tabs-content">
-             <div class="tabs-pane active" id="intro">
-                 {{> introduction}}
-             </div>
+            <div class="tabs-pane active" id="intro">
+               {{> introduction}}
+            </div>
 
-             <div class="tabs-pane" id="chapter0">
-                 {{> zero}}
-             </div>
+            <div class="tabs-pane" id="chapter0">
+               {{> zero}}
+            </div>
 
-             {{#if currentUser}}
-                <div class="tabs-pane" id="chapter1">
-                    {{> one}}
-                </div>
+            <div class="tabs-pane" id="chapter1">
+               {{> one}}
+            </div>
 
-                <div class="tabs-pane" id="chapter2">
-                    {{> two}}
-                </div>
-             {{/if}}
+            <div class="tabs-pane" id="chapter2">
+               {{> two}}
+            </div>
          </div>
       </div>
       </section>
