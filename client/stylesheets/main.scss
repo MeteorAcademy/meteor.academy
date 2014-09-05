@@ -73,6 +73,7 @@ header {
 section {
    aside {
       @include span-columns(2);
+      font-size: 20px;
    }
    .content {
       @include span-columns(10);
