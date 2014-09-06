@@ -190,22 +190,98 @@
                Copy and paste the following code into your HTML file.  In my
                case, that's ichiban.meteor.com.html:
             </p>
+
+            <p>
+               <a href="https://gist.github.com/CiaraBurkett/13749da4d17915e27856#file-ichiban-meteor-com-html"
+               target="_blank">Get HTML here.</a>  (Sorry for the link, I'm having
+               syntax hightlighting problems that I'm still working on.)
+            </p>
+
+            <p>
+               Next, copy and paste the following into your CSS file.
+            </p>
+            <pre>
+               <code class="css">
+                  body {
+                     font-family: 'Raleway', sans-serif;
+                  }
+
+                  h1 {
+                     font-size: 48px;
+                     line-height: 72px;
+                  }
+
+                  h1 small {
+                     font-style: italic;
+                  }
+
+                  p {
+                     font-size: 24px;
+                     font-weight: 300;
+                     line-height: 36px;
+                  }
+
+                  footer {
+                     text-align: center;
+                  }
+               </code>
+            </pre>
          </li>
 
          <li>
             <code>$ git init</code>
+
+            <p>
+               Initialize a Git repository and push your code to GitHub.
+            </p>
          </li>
 
          <li>
             <code>$ meteor deploy ichiban.meteor.com</code>
+
+            <p>
+               Deploy to Meteor's free servers with a custom subdomain.  If you try to
+               deploy to ichiban.meteor.com, Meteor will return the following in the
+               command-line:
+            </p>
+
+            <pre>
+               <code>
+                  Sorry, that site belongs to a different user.
+                  You are currently logged in as [username].
+
+                  Either have the site owner use 'meteor authorized --add' to add you
+                  as an authorized developer for the site, or switch to an authorized
+                  account with 'meteor login'.
+               </code>
+            </pre>
+
+            <p>
+               Otherwise, Meteor will return the following upon successful deployment:
+            </p>
+
+            <pre>
+               <code>
+                  Sorry, that site belongs to a different user.
+                  You are currently logged in as [username].
+
+                  Either have the site owner use 'meteor authorized --add' to add you
+                  as an authorized developer for the site, or switch to an authorized
+                  account with 'meteor login'.
+               </code>
+            </pre>
          </li>
 
          <li>
-            <code>Error upon not deployed</code>
+            Rejoice!  You've just created your first website with Meteor!
          </li>
       </ol>
 
       <h3>Summary</h3>
+      <p>Coming soon.</p>
       <h3>Exercises</h3>
+      <p>Coming soon.</p>
    </article>
+
+   <script>hljs.initHighlightingOnLoad();</script>
 </template>
