@@ -146,14 +146,50 @@
                After you take a gander at the contents of each file, select the .js file
                and delete it.  Yup.  Delete it.  It's okay, we don't need it.
             </p>
+
+            <p>
+               Did you notice what happened?  The page updated without a refresh, getting
+               rid of the 0 and any incrementation.  As you might expect, if you press the
+               button now, nothing happens.  And we're left with a plain ol' static site
+               to play around with.
+            </p>
          </li>
 
          <li>
             <code>$ meteor add bootstrap</code>
+
+            <p>
+               You can do more with the Meteor command-line utility than just create
+               apps.  You can add native and third-party smart packages for additional
+               functionality.
+            </p>
+
+            <p>
+               To add some simple default styling and resets to Ichiban, let's add Meteor's
+               Twitter Bootstrap smart package using the above command.  The terminal
+               should return something like the following:
+            </p>
+
+            <code>
+               <pre>
+                  Refreshing package metadata. This may take a moment.
+                     added bootstrap at version 1.0.1
+
+                  bootstrap: Front-end framework from Twitter
+               </pre>
+            </code>
+
+            <p>
+               Again, you'll notice the page updated itself without a refresh, converting
+               Ichiban into a Bootstrapped site with no additional configuration necessary.
+            </p>
          </li>
 
          <li>
-            <code>HTML/CSS</code>
+            <p>
+               Copy and paste the following code into your HTML file.  In my
+               case, that's ichiban.meteor.com.html:
+            </p>
          </li>
 
          <li>
