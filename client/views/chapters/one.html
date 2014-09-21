@@ -9,32 +9,25 @@
          <i class="fa fa-clock-o"></i> 10 min.
       </span>
 
-      <img src="ichiban.png">
+      <img src="one/ichiban-live.png">
 
       <p>
          <a href="http://ichiban.meteor.com" target="_blank">Ichiban</a> is a single
-         page static website containing dummy content from Hipster Ipsum.
+         page static website containing dummy content from <a href="http://hipsum.co" target="_blank">Hipster Ipsum</a>.
       </p>
 
       <ol>
-         <li>
-            <p>
-               Open your program for interacting with the command line (Terminal for Mac).
-               The code samples starting with '$' are the commands you'll be using for
-               developing your Meteor application.
-            </p>
-         </li>
-         <li>
+          <li>
             <code>
                $ mkdir Projects && cd Projects
             </code>
+
             <p>
-               If you don't already have a directory for your projects, create one now and
-               'change' into it using the above command.  Assuming you go through the
-               entirety of Meteor Academy, you're going to need a central location for all
-               of your projects.  Use whatever name suits you best.
+                Open the command-line interface (Terminal for Mac), create a Projects directory, 
+                and change into that directory.  This is where you will store all of your Meteor 
+                projects.  Use a name you're comfortable with.
             </p>
-         </li>
+          </li>
 
          <li>
             <code>
@@ -42,59 +35,38 @@
             </code>
 
             <p>
-               In your Projects directory, use the 'meteor' command to create your first
-               website.  Generally, I like to give my Meteor applications names that include
-               *.meteor.com as a subdomain.  If you prefer to name your project simply
-               'ichiban,' that's perfectly fine.  Or maybe you want to give your project
-               a completely different name!  Remember, this is your project and you're
-               free to do whatever you want with it.  The more you personalize tutorials,
-               the likelier you are to remember the concepts you've learned.
+                In your Projects directory, use the 'meteor' command-line tool to create a 
+                codebase for your first website.  It's my personal preference to name my 
+                Meteor projects after their prospective domain names.  You're free to use any 
+                naming convention you like, as long as it keeps you organized.  Also, the more 
+                you personalize tutorials, the likelier you are to remember the concepts you've 
+                learned.
             </p>
 
             <p>
-               In less than a second, Ichiban will be ready for you.  If all has gone well,
-               the command-line should return the following:
+                In a second or so, the command-line will return:
             </p>
 
-            <code>
-               <pre>
-                  ichiban.meteor.com: created.
-
-                  To run your new app:
-                     cd ichiban.meteor.com
-                     meteor
-               </pre>
-            </code>
+            <img src="one/ichiban-created.png">
 
             <p>
-               If this doesn't work for you, copy the error from the command-line and Google
-               it.  It's very likely someone else has come across the same issue, and the
-               Meteor community does its best to respond to those who need help.
+                If this doesn't work for you, copy the error from the command-line and Google 
+                it.  It's very likely someone else has come across the same problem.
             </p>
          </li>
 
          <li>
             <code>
-               $ cd ichiban.meteor.com && meteor
+               $ cd ichiban.meteor.com && meteor [run]
             </code>
 
             <p>
-               Now it's time to take a look at what we've got.  Change into your Ichiban
-               directory and use the 'meteor' command to start your local development
-               server.  The command-line should return something like the following:
+                Now it's time to take a look at what we've got.  Change into your Ichiban 
+                directory and use the 'meteor' command to start your local development server.  
+                'Run' is the default command and does not explicitly need to be called.
             </p>
 
-            <code>
-               <pre>
-                  [[[[[ ~/Desktop/Projects/ichiban.meteor.com ]]]]]
-
-                  => Started proxy.
-                  => Started MongoDB.
-                  => Started your app.
-
-                  => App running at: http://localhost:3000/
-               </pre>
-            </code>
+            <img src="one/ichiban-running.png">
 
             <p>
                If you get an error, you know what to do! ʕ•ᴥ-ʔ
@@ -103,136 +75,57 @@
 
          <li>
             <p>
-               Now go to http://localhost:3000 in a modern browser (preferably Google
-               Chrome) to check out the tiny default application Meteor gives you.  Assuming
-               you're using the latest version of Meteor (0.9.1 as of this writing), you
-               should see the following:
+                Now to to http://localhost:3000 in a modern browser (preferably Google Chrome) to 
+                check out the tiny default application Meteor gives you.  Assuming you're using 
+                the latest version of Meteor (0.9.2.2 as of this writing), this is what you'll see.
             </p>
 
-            <img src="welcometometeor.png">
+            <img src="one/welcome-to-meteor.png">
 
             <p>
-               If your curiosity hasn't already gotten the best of you, click the 'Click Me'
-               button and see what happens.  Pretty cool, right?  Each time the button is pressed,
-               the number is instantly incremented by 1.
-            </p>
-
-            <p>
-               If you refresh the page, you'll notice the number returns to 0.
+                If your curiosity hasn't already gotten the best of you, click the 'Click Me' 
+                button and see what happens.  Pretty cool, right?  Each time the button 
+                is clicked, the number is instantly incremented by 1.  If you manually refresh the page, 
+                you'll notice the number returns to 0.
             </p>
          </li>
 
          <li>
             <p>
-               Now, leaving your local server running, open a new tab in your terminal. The
-               new tab should start in the same directory as your project.  From here, you
-               can open Ichiban in your favorite text editor.
+                Leave your local server running and open a new tab in your CLI.  Change into your 
+                Ichiban directory if you're not already there.  Use your favorite text editor 
+                to open your codebase.
+            </p>
+
+            <img src="one/ichiban-open-atom.png">
+
+            <p>
+                After you take a gander at the contents of each file, select the .js file and 
+                delete it.  Yup.  Delete it.  It's okay, we don't need it.
             </p>
 
             <p>
-               For instance, if you've installed <a href="http://atom.io">Atom</a>, type
-               <code>$ atom .</code> in your project directory.
+                Did you notice what happened?  The page updated without a manual refresh, getting 
+                rid of the 0 and any incrementation.  As you might expect, if you press the button now, 
+                nothing happens.  And we're left with a plain ol' static site to play around with.
             </p>
          </li>
 
          <li>
             <p>
-               In your text editor, you'll notice you have three files named after your
-               project.  In my case, ichiban.meteor.com.css, ichiban.meteor.com.html, and
-               ichiban.meteor.com.js.
-            </p>
-
-            <p>
-               After you take a gander at the contents of each file, select the .js file
-               and delete it.  Yup.  Delete it.  It's okay, we don't need it.
-            </p>
-
-            <p>
-               Did you notice what happened?  The page updated without a refresh, getting
-               rid of the 0 and any incrementation.  As you might expect, if you press the
-               button now, nothing happens.  And we're left with a plain ol' static site
-               to play around with.
-            </p>
-         </li>
-
-         <li>
-            <code>$ meteor add bootstrap</code>
-
-            <p>
-               You can do more with the Meteor command-line utility than just create
-               apps.  You can add native and third-party smart packages for additional
-               functionality.
-            </p>
-
-            <p>
-               To add some simple default styling and resets to Ichiban, let's add Meteor's
-               Twitter Bootstrap smart package using the above command.  The terminal
-               should return something like the following:
-            </p>
-
-            <code>
-               <pre>
-                  Refreshing package metadata. This may take a moment.
-                     added bootstrap at version 1.0.1
-
-                  bootstrap: Front-end framework from Twitter
-               </pre>
-            </code>
-
-            <p>
-               Again, you'll notice the page updated itself without a refresh, converting
-               Ichiban into a Bootstrapped site with no additional configuration necessary.
+                Copy/paste the following code in the remaining HTML and CSS files:  
+                <a href="https://gist.github.com/CiaraBurkett/13749da4d17915e27856" target="_blank">Gist</a>
             </p>
          </li>
 
          <li>
             <p>
-               Copy and paste the following code into your HTML file.  In my
-               case, that's ichiban.meteor.com.html:
+                Optional:
             </p>
-
-            <p>
-               <a href="https://gist.github.com/CiaraBurkett/13749da4d17915e27856#file-ichiban-meteor-com-html"
-               target="_blank">Get HTML here.</a>  (Sorry for the link, I'm having
-               syntax hightlighting problems that I'm still working on.)
-            </p>
-
-            <p>
-               Next, copy and paste the following into your CSS file.
-            </p>
-            <pre>
-               <code class="css">
-                  body {
-                     font-family: 'Raleway', sans-serif;
-                  }
-
-                  h1 {
-                     font-size: 48px;
-                     line-height: 72px;
-                  }
-
-                  h1 small {
-                     font-style: italic;
-                  }
-
-                  p {
-                     font-size: 24px;
-                     font-weight: 300;
-                     line-height: 36px;
-                  }
-
-                  footer {
-                     text-align: center;
-                  }
-               </code>
-            </pre>
-         </li>
-
-         <li>
             <code>$ git init</code>
 
             <p>
-               Initialize a Git repository and push your code to GitHub.
+               Initialize a Git repository and push your code to GitHub for all the world to see!
             </p>
          </li>
 
@@ -240,37 +133,17 @@
             <code>$ meteor deploy ichiban.meteor.com</code>
 
             <p>
-               Deploy to Meteor's free servers with a custom subdomain.  If you try to
-               deploy to ichiban.meteor.com, Meteor will return the following in the
-               command-line:
+                Deploy to Meteor's free servers with a custom subdomain.  If you try to deploy to 
+                ichiban.meteor.com, Meteor will return an error.  Otherwise...  Success!
             </p>
 
-            <pre>
-               <code class="nohighlight">
-                  Sorry, that site belongs to a different user.
-                  You are currently logged in as [username].
+            <img src="one/ichiban-deploy.png">
 
-                  Either have the site owner use 'meteor authorized --add' to add you
-                  as an authorized developer for the site, or switch to an authorized
-                  account with 'meteor login'.
-               </code>
-            </pre>
-
-            <p>
-               Otherwise, Meteor will return the following upon successful deployment:
-            </p>
-
-            <pre>
-               <code class="nohighlight">
-                  Deploying to ichiban.meteor.com. Bundling...
-                  Uploading...
-                  Now serving at ichiban.meteor.com
-               </code>
-            </pre>
          </li>
 
          <li>
-            Rejoice!  You've just created your first website with Meteor!
+            Rejoice!  You just created your first static website with Meteor!  Go to http://ichiban.meteor.com 
+            or your custom subdomain to make sure everything turned out alright.
          </li>
       </ol>
 
@@ -280,5 +153,4 @@
       <p>Coming soon.</p>
    </article>
 
-   <script>hljs.initHighlightingOnLoad();</script>
 </template>
