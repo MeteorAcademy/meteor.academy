@@ -236,5 +236,29 @@ Router.map(function() {
 });
         </code>
       </pre>
+
+      <h4>Templates</h4>
+
+      <!-- What is a template? -->
+
+      <p>
+        We're telling Iron Router to use the template with the name attribute "layout" as our layoutTemplate, 
+        which is a wrapper for all of the HTML in the <code>body</code> tag.  For the yieldTemplate, we're 
+        pointing the templates with name attributes "header" and "footer" to act as the header and footer 
+        <em>for every page</em>.
+      </p>
+
+      <p>
+        In the Segundo root directory, create six Spacebars templates:  layout.html, home.html, about.html, 
+        contact.html, header.html, and footer.html.
+      </p>
+
+      <h5>Layout</h5>
+
+      <p>
+        First, we'll create the layout, the base structure that will define each of our pages.  In main.html, 
+        copy all the code between the <code>body</code> tags, delete it, and replace it with the 
+        layout Spacebars helper.  The ">" character tells Spacebars "put [layout] code here."
+      </p>
    </article>
 </template>
