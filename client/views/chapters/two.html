@@ -4,9 +4,237 @@
          Chapter 2:
          <small>Your Second Website</small>
       </h2>
+      <span class="meta">
+         <i class="fa fa-code"></i> Beginner
+         <i class="fa fa-clock-o"></i> 10 min.
+      </span>
+      
+        <figure>
+            <img src="two/segundo-deploy.png">
+            <figcaption>
+                <a href="http://segundo.meteor.com" target="_blank">Segundo</a> 
+                is a multipage static website.
+            </figcaption>
+        </figure>
 
       <p>
-         Available week of September 26th!
+        Sweet.  So we know how to create a super simple single page website in Meteor and deploy our 
+        custom subdomains to Meteor's servers.  Perhaps you feel this isn't the most practical skill 
+        to have, but I made 
+        <a href="http://ciara.io" target="_blank">my own website</a> this way in an afternoon.  Like 
+        many developers and designers, I tend to take care of my own web needs last &mdash; if at all.  
+        And with <a href="http://gratipay.com/ciara" target="_blank">no money to my name</a>, I needed 
+        a an affordable solution with a professional look.  If you're looking to expand your portfolio, 
+        it certainly couldn't hurt.
       </p>
+
+      <p>
+        But what if we need to create a multipage website for application?  Read on!
+      </p>
+
+      <p>
+        NOTE:  Dig the colorscheme on my personal site?  
+        <a href="http://www.colourlovers.com/palette/3431230/ciara">I made it myself with Colourlovers</a>!  
+        Feel free to use it for whatever you want.
+      </p>
+
+      <h4>Create a New Project</h4>
+
+      <p>
+        In Terminal, create a new project:  segundo.meteor.com.  Open the codebase in your text editor, 
+        start your local development server, and navigate your browser to http://localhost:3000.  You 
+        should see our friend "Welcome to Meteor."  (What the hey, click the button a few times just 
+        to get it our of your system.)
+      </p>
+
+      <h5>.meteor</h5>
+
+      <p>
+        The Meteor framework is comprised of many "smart packages" or modules.  As we increase our code 
+        radius and become advanced Meteor developers, we'll be adding and removing smart packages to enable 
+        additional functionality in our applications.  Later on, we'll be creating our own!
+      </p>
+
+      <p>
+        Let's crack open that .meteor directory and open the 'packages' file with Terminal or you text 
+        editor.
+
+        <figure>
+            <img src="two/base-packages.png">
+        </figure>
+      </p>
+
+      <p>
+        It's a short list of the base packages we get when we create a Meteor project from scratch.  I 
+        think 'meteor-platform' is self-explanatory.  The 'autopublish' and 'insecure' smart packages 
+        make the entire database publicly available.  We'll leave these for now, since we don't have any 
+        data for a database, but in upcoming chapters, we'll be removing them to make our apps more secure.
+      </p>
+
+      <h5>Rename Files</h5>
+
+      <p>
+        In our root directory, let's take a closer look at the default files Meteor gives us.  They'll be 
+        in the form of myapp.css, myapp.html, myapp.js.  In this case, it's segundo.meteor.com.css, etc.  
+        Ew.  We don't want that!
+      </p>
+
+      <p>
+        With our development server still running, let's change the name of each file to main.css, main.html, 
+        and main.js, respectively.  The counter has returned to 0, as expected.  When we click the button, 
+        we see everything's still working.  Phew!  In the blink of an eye, our local server has refreshed itself 
+        without any loss in functionality.  Don't you just love that?
+      </p>
+
+      <h5>Basic HTML and CSS</h5>
+
+      <p>
+        In main.css, we'll copy/paste some very basic CSS:
+      </p>
+
+      <pre>
+      <code>
+/* Made by ciara.io for Meteor Academy */
+
+body {
+    color: #333;
+    font-family: sans-serif;
+    font-size: 115%;
+    line-height: 24px
+}
+
+footer {
+    text-align: center;
+}
+      </code>
+      </pre>
+
+      <p>
+        When we save the file, we see "Welcome to Meteor" is looking good with our new styles.  But oh snap!  
+        The counter is still where we left it!  As of 0.9.0, Meteor comes with <a href="#" target="_blank">
+        live CSS injection</a> if you only change CSS files between saves.  (Web designers, I'm looking at 
+        you!)
+      </p>
+
+      <p>
+        In main.html, we'll paste some Hipster Ipsum, and add crude placeholder navigation for our other 
+        pages.
+      </p>
+
+      <pre>
+        <code>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
+        </code>
+      </pre>
+
+      <figure>
+          <img src="two/segundo-nav.png">
+      </figure>
+
+      <h4>Iron Router</h4>
+
+      <p>
+        Let's head on over to Atmosphere to read about the Iron Router smart package, the de factor standard 
+        for routing in Meteor.  Copy the command at the top of the page:  <code>meteor add iron:router</code> and 
+        paste it into the terminal.
+      </p>
+
+      <p>
+        Back in .meteor/packages, we see "iron:router" has been added to the bottom of the list.  And if 
+        we delete that line, Iron Router will be removed from our code base.  But you already read the comments 
+        at the top of the file, so you already knew that!  ʕ•ᴥ-ʔ
+      </p>
+
+      <p>
+        We can also bring up a list of packages in our project by typing 'meteor list' in Terminal.  Meteor 
+        will return package names, version numbers, and short descriptions.
+      </p>
+
+      <figure>
+          <img src="two/segundo-meteor-list.png">
+      </figure>
+
+      <h5>Declaring Routes</h5>
+
+      <p>
+        Let's delete all the contents of main.js, and add a basic router map based on the example the Iron 
+        Router docs give us.
+      </p>
+
+      <pre>
+        <code>
+Router.map(function() {
+    this.route('home', {path: '/'});
+    this.route('about');
+    this.route('contact');
+});
+        </code>
+      </pre>
+
+      <p>
+        What did we just do?  Let's read the docs:
+      </p>
+
+      <blockquote>
+          The first route is named home, and will render a template named home at the [root] path /. The second is          named about, and will render a template named about at the path /about.
+      </blockquote>
+
+      <p>
+        And you guessed it &mdash; our third route will render a template 'contact' at the route /contact.  
+        Seeing a pattern here?
+      </p>
+
+      <h5>Using Routes</h5>
+
+      <p>
+        In main.html, replace the hashtags for the dummy navigation links with the following Spacebars helpers:
+      </p>
+
+      <pre>
+        <code>
+<a href="{{pathFor 'home'}}">Home</a>
+<a href="{{pathFor 'about'}}">About</a>
+<a href="{{pathFor 'contact'}}">Contact</a>
+        </code>
+      </pre>
+
+      <p>
+        Back in the browser, click the navigation links.  The relative paths appear at the end of the URL.  
+        Great!  The router map is working!
+      </p>
+
+      <h5>Configuring Routes</h5>
+
+      <p>
+        In main.js, above the router map, let's add basic route configuration:
+      </p>
+
+      <pre>
+        <code>
+            <strong>
+Router.configure({
+   layoutTemplate: 'layout',
+   yieldTemplate: {
+      header: {
+         to: 'header'
+      },
+      footer: {
+         to: 'footer'
+      }
+   }
+});
+        </strong>
+
+Router.map(function() {
+  this.route('home', {path: '/'});
+  this.route('about');
+  this.route('contact');
+});
+        </code>
+      </pre>
    </article>
 </template>
