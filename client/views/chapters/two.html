@@ -24,12 +24,12 @@
         <a href="http://ciara.io" target="_blank">my own website</a> this way in an afternoon.  Like 
         many developers and designers, I tend to take care of my own web needs last &mdash; if at all.  
         And with <a href="http://gratipay.com/ciara" target="_blank">no money to my name</a>, I needed 
-        a an affordable solution with a professional look.  If you're looking to expand your portfolio, 
+        an affordable solution with a professional look.  If you're looking to expand your portfolio, 
         it certainly couldn't hurt.
       </p>
 
       <p>
-        But what if we need to create a multipage website for application?  Read on!
+        But what if we need to create a multipage website or application?  Read on!
       </p>
 
       <p>
@@ -56,7 +56,7 @@
       </p>
 
       <p>
-        Let's crack open that .meteor directory and open the 'packages' file with Terminal or you text 
+        Let's crack open that .meteor directory and open the 'packages' file with Terminal or your text 
         editor.
 
         <figure>
@@ -92,8 +92,8 @@
         In main.css, we'll copy/paste some very basic CSS:
       </p>
 
-      <pre>
-      <code class="language-css">
+      <pre class="language-css" rel="css">
+        <code class="language-css">
 /* Made by ciara.io for Meteor Academy */
 
 body {
@@ -106,7 +106,7 @@ body {
 footer {
     text-align: center;
 }
-      </code>
+        </code>
       </pre>
 
       <p>
@@ -121,8 +121,8 @@ footer {
         pages.
       </p>
 
-      <pre>
-        <code class="language-html">
+      <pre class="language-markup">
+        <code class="language-markup">
 <nav>
     <a href="#">Home</a>
     <a href="#">About</a>
@@ -165,7 +165,7 @@ footer {
         Router docs give us.
       </p>
 
-      <pre>
+      <pre class="language-javascript">
         <code class="language-javascript">
 Router.map(function() {
     this.route('home', {path: '/'});
@@ -184,7 +184,7 @@ Router.map(function() {
       </blockquote>
 
       <p>
-        And you guessed it &mdash; our third route will render a template 'contact' at the route /contact.  
+        And you guessed it &mdash; our third route will render a template "contact" at the route "/contact".  
         Seeing a pattern here?
       </p>
 
@@ -194,8 +194,8 @@ Router.map(function() {
         In main.html, replace the hashtags for the dummy navigation links with the following Spacebars helpers:
       </p>
 
-      <pre>
-        <code class="language-html">
+      <pre class="language-markup">
+        <code class="language-markup">
 <a href="{{pathFor 'home'}}">Home</a>
 <a href="{{pathFor 'about'}}">About</a>
 <a href="{{pathFor 'contact'}}">Contact</a>
@@ -213,7 +213,7 @@ Router.map(function() {
         In main.js, above the router map, let's add basic route configuration:
       </p>
 
-      <pre>
+      <pre class="language-javascript">
         <code class="language-javascript">
             <strong>
 Router.configure({

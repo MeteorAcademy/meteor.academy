@@ -1,3 +1,5 @@
 Template.home.rendered = function() {
-    Prism.highlightElement(code);
+    var pre = this.find('pre');
+    Prism.highlightElement(pre);
 };
+
