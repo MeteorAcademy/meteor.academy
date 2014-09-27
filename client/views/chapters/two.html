@@ -41,7 +41,7 @@
       <h4>Create a New Project</h4>
 
       <p>
-        In Terminal, create a new project:  segundo.meteor.com.  Open the codebase in your text editor, 
+      In Terminal, create a new project:  <code>segundo.meteor.com</code>.  Open the codebase in your text editor, 
         start your local development server, and navigate your browser to http://localhost:3000.  You 
         should see our friend "Welcome to Meteor."  (What the hey, click the button a few times just 
         to get it our of your system.)
@@ -130,10 +130,6 @@ footer {
 &lt;/nav&gt;
         </code>
       </pre>
-
-      <figure>
-          <img src="two/segundo-nav.png">
-      </figure>
 
       <h4>Iron Router</h4>
 
@@ -260,7 +256,140 @@ Router.map(function() {
       <p>
         First, we'll create the layout, the base structure that will define each of our pages.  In main.html, 
         copy all the code between the <code>body</code> tags, delete it, and replace it with the 
-        layout Spacebars helper.  The ">" character tells Spacebars "put [layout] code here."
+        <code>&#123;&#123;&gt; layout&#125;&#125;</code> Spacebars helper.  The "&gt;" character tells 
+        Spacebars "put [layout] code here."
       </p>
+
+      <pre class="language-markup">
+        <code class="language-markup">
+&lt;head&gt;
+    &lt;title&gt;Segundo&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &#123;&#123;&gt; layout&#125;&#125;
+&lt;/body&gt;
+        </code>
+      </pre>
+
+      <p>
+        In <code>layout.html</code>, we'll create a template element with a name attribute with value "layout."  
+        Add three Spacebars helpers for the header, yield, which is essentially a placeholder for page content, 
+        and a helper for the footer.
+      </p>
+
+      <!-- layout.html -->
+      <pre class="language-markup">
+        <code class="language-markup">
+&lt;template name="layout"&gt;
+   &#123;&#123;&gt;&gt; header&#125;&#125;
+   &lt;hr&gt;
+   &#123;&#123;&gt;&gt; yield&#125;&#125;
+   &#123;&#123;&gt;&gt; footer&#125;&#125;
+&lt;/template&gt;
+        </code>
+      </pre>
+
+      <p>
+        We've just created the base structure that will define each of our pages.
+      </p>
+
+      <h5>Header and Footer </h5>
+
+      <p>
+        Remember the code we copied from the <code>body</code> tag?  Let's copy the <code>header</code> and 
+        <code>footer</code> code, paste it into <code>header.html</code> and <code>footer.html</code> 
+        respectively.  Wrap in template elements with matching name attributes.
+      </p>
+
+      <!-- header.html -->
+       <pre class="language-markup">
+        <code class="language-markup">
+&lt;!-- header.html --&gt;
+
+&lt;template name="header"&gt;
+    &lt;header&gt;
+      &lt;h1&gt;
+         Segundo
+         &lt;small&gt;Second Time's a Charm&lt;/small&gt;
+      &lt;/h1&gt;
+
+      &lt;nav&gt;
+          &lt;a href="&#123;&#123;pathFor 'home'&#125;&#125;"&gt;Home&lt;/a&gt;
+          &lt;a href="&#123;&#123;pathFor'about'&#125;&#125;"&gt;About&lt;/a&gt;
+          &lt;a href="&#123;&#123;pathFor 'contact'&#125;&#125;"&gt;Contact&lt;/a&gt;
+      &lt;/nav&gt;
+
+   &lt;/header&gt;
+&lt;/template&gt;
+        </code>
+      </pre>
+
+      <!-- footer.html -->
+       <pre class="language-markup">
+        <code class="language-markup">
+&lt;!-- footer.html --&gt;
+
+&lt;template name="footer"&gt;
+    &lt;footer&gt;
+
+      &lt;p&gt;
+        No Copyright.  Made with &hearts; by &lt;a href="http://ciara.io" target="_blank"&gt;ciara&lt;/a&gt;
+         for &lt;a href="http://meteor.academy" target="_blank"&gt;Meteor Academy&lt;/a&gt;.
+      &lt;/p&gt;
+
+   &lt;/footer&gt;
+&lt;/template&gt;
+        </code>
+      </pre>
+      
+
+      <h5>Pages</h5>
+
+      <p>
+        Now we'll paste the code we copied from <code>main.html</code> (without the header and footer code) into 
+        <code>home.html</code>.  Wrap in a "home" template.  We repeat this exact process for our 
+        <code>about</code> and <code>contact</code> pages.  (Paste in some 
+        <a href="hipsum.co" target="_blank">hipster-tastic dummy text</a> if you'd like.)
+      </p>
+
+      <p>
+        Let's take a look at http://localhost:3000.  When we click the navigation links, we'll be directed 
+        to their corresponding pages.  Voila!  We've built a multipage website with Meteor!
+      </p>
+
+      <figure>
+          <img src="two/segundo-nav.png">
+      </figure>
+
+      <h4>Deploy</h4>
+
+      <p>
+        To see our website live, let's deploy to Meteor's servers with the "deploy" command.  Remember, make 
+        sure you choose a custom subdomain for your project, or Meteor will complain &mdash; and rightfully so!
+      </p>
+
+      <h4>Summary</h4>
+
+      <p>
+        Now we know how to use Iron Router to create custom routes and pages for our websites and applications.  
+        However, we've just barely scratched the surface of Iron Router's capabilities.  Especially with the 
+        release of <a href="https://www.meteor.com/blog/2014/09/25/meteor-093-packaging-system-updates" target="_blank">Meteor 0.9.3</a>.
+      </p>
+
+      <!-- <h4>Exercises</h4> -->
+
+      <h4>Extra Reading</h4>
+
+      <ol>
+          <li><a href="http://docs.meteor.com/#packages" target="_blank">Meteor Docs:  Packages</a></li>
+          <li><a href="http://docs.meteor.com/#livehtmltemplates" target="_blank">Meteor Docs:  
+          Live HTML Templates</a></li>
+          <li><a href="https://www.yauh.de/using-pre-made-themes-with-meteor/" target="_blank">
+          Using Pre-made Themes with Meteor</a></li>
+          <li><a href="http://davidbrear.wordpress.com/2013/12/13/meteor-template-naming-technique/" 
+          target="_blank">Alternate Naming Technique for Meteor Templates</a></li>
+      </ol>
+
    </article>
 </template>
