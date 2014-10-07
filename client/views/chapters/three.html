@@ -120,6 +120,61 @@ footer
 
       <pre class="language-markup">
         <code class="language-markup">
+&lt;head&gt;
+  &lt;title&gt;StoryPost - Tell Your Story to the World&lt;/title&gt;
+  &lt;link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;header&gt;
+            &lt;h1&gt;&lt;i class="fa fa-paper-plane"&gt;&lt;/i&gt; StoryPost&lt;/h1&gt;
+            &lt;h2&gt;Tell your story to the world.  Anonymously.&lt;/h2&gt;
+        &lt;/header&gt;
+
+        &#123;&#123;&gt; addPost&#125;&#125;
+
+        &#123;&#123;&gt; postList&#125;&#125;
+
+        &lt;footer&gt;
+            &lt;p&gt;
+                &lt;a href="/"&gt;StoryPost&gt;/a&gt; was created by &gt;a href="http://ciara.io" target="_blank"&gt;ciara&lt;/a&gt; for 
+                &lt;a href="http://meteor.academy" target="_blank"&gt;Meteor Academy&lt;/a&gt;
+           &lt;/p&gt;
+       &lt;/footer&gt;
+  &lt;/div&gt;&lt;!-- end .container --&gt;
+&lt;/body&gt;
+
+&lt;template name="addPost"&gt;
+    &lt;section class="addPost"&gt;
+        &lt;form&gt;
+            &lt;input type="text" name="title" class="title" placeholder="Title" required&gt;&lt;br&gt;
+            &lt;textarea class="story" placeholder="Write to your heart's content!"&gt;&lt;/textarea&gt;&lt;br&gt;
+            &lt;input type="text" name="author" class="author" placeholder="Pen name" required&gt;&lt;br&gt;
+
+            &lt;input type="submit" value="Post!"&gt;
+        &lt;/form&gt;
+    &lt;/section&gt;&lt;!-- end .addPost --&gt;
+&lt;/template&gt;
+
+&lt;template name="postList"&gt;
+    &lt;section class="postList"&gt;
+        &#123;&#123;#each posts&#125;&#125;
+            &lt;article&gt;
+                &lt;h3&gt;&#123;&#123;title&#125;&#125;&lt;/h3&gt;
+                &lt;p&gt;
+                    &#123;&#123;story&#125;&#125;
+                &lt;/p&gt;
+                &lt;small&gt;
+                    &lt;p&gt;
+                        &mdash; &#123;&#123;author&#125;&#125;, published on &#123;&#123;date&#125;&#125;
+                        &lt;i class="fa fa-trash delete"&gt;&lt;/i&gt;
+                    &lt;/p&gt;
+                &lt;/small&gt;
+            &lt;/article&gt;
+        &#123;&#123;/each&#125;&#125;
+    &lt;/section&gt;&lt;!-- end .main --&gt;
+&lt;/template&gt;        
         </code>
       </pre>
 
@@ -311,7 +366,7 @@ Posts.insert({title: "Once Upon a Time", story: "There was an old lady who lived
 
       <pre class="language-javascript">
         <code class="language-javascript">
-Posts.remove("paste unique number here");
+Posts.remove("paste special key between quotes");
         </code>
       </pre>
 
@@ -351,14 +406,13 @@ Posts.remove("paste unique number here");
           </li>
 
           <li>
-            <i class="fa fa-usd"></i><a href="https://www.udemy.com/meteor-course/#/" target="_blank">Meteor:  Build a Real-Time Web App Using Only JavaScript</a> (Meteor 0.7)
+            <i class="fa fa-usd"></i><a href="https://www.udemy.com/meteor-course/#/" target="_blank"> Meteor:  Build a Real-Time Web App Using Only JavaScript</a> (Meteor 0.7)
           </li>
 
           <li>
             <a href="http://docs.mongodb.org/manual/" target="_blank">MongoDB Manual</a>
           </li>
       </ol>
-
    </article>
 </template>
 
