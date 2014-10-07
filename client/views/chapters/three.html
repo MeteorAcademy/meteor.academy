@@ -24,7 +24,7 @@
         Let's start by adding all of the smart packages we're going to need for this project:
         <pre>
             <code>
-                meteor add mquandalle:stylus natestrauser:font-awesome digilord:sugarjs
+meteor add mquandalle:stylus natestrauser:font-awesome digilord:sugarjs
             </code>
         </pre>
       </p>
@@ -79,8 +79,8 @@
 
       <p>
         Like we did in the previous chapter, let's change the name of our files to: <code>main.html</code>, 
-        <code>main.js</code>, and <code>main.style</code> (the extension for Stylus).  In 
-        <code>main.html</code>, we'll import Jeet, Nib, and Rupture at the top of the file and add our custom 
+        <code>main.js</code>, and <code>main.styl</code> (the extension for Stylus).  In 
+        <code>main.styl</code>, we'll import Jeet, Nib, and Rupture at the top of the file and add our custom 
         styles below that.
       </p>
 
@@ -133,9 +133,9 @@ footer
 
       <pre class="language-javascript">
         <code class="language-javascript">
-        if (Meteor.isServer) {}
+if (Meteor.isServer) {}
 
-        if (Meteor.isClient) {}
+if (Meteor.isClient) {}
         </code>
       </pre>
 
@@ -154,8 +154,210 @@ footer
 
       <h4>Collections</h4>
 
+      <p>
+        At the very top of the file, above <code>isServer</code>, we'll create a collection called "Posts" like 
+        so:
+      </p>
+
+      <pre class="language-javascript">
+        <code class="language-javascript">
+Posts = new Mongo.Collection("posts");
+        </code>
+      </pre>
+
+      <p>
+        Put (very) simply, a collection is a single set of data.  In our case, we only need one collection 
+        because we're only dealing with "posts" data.  We create our Posts collection outside of 
+        <code>isServer</code> and <code>isClient</code> so our collection will be available to both the client 
+        and the server.
+      </p>
+
+      <h4>Server</h4>
+
+      <p>
+        Our app, StoryPost, will have two main functionalities:  Anyone can create a post and anyone can delete 
+        any post:
+      </p>
+
+      <pre class="language-javascript">
+        <code class="language-javascript">
+if (Meteor.isServer) {
+    Meteor.methods({
+        addPost: function(title, story, author, date) {
+            Posts.insert({
+                title: title,
+                story:story,
+                author: author,
+                date:date
+            });
+        },
+        deletePost: function(id) {
+            Posts.remove(id);
+        }
+    });
+}
+        </code>
+      </pre>
+
+      <p>
+        In <code>isServer</code>, we've created two methods based on the Spacebars placeholders we added to 
+        <code>main.html</code>: <code>addPost</code> inserts each post into the database with the data users 
+        will be submitting from the form.  We've also added a parameter for the date, which we'll create on 
+        the client using Sugar.
+      </p>
+
+      <p>
+        The <code>deletePost</code> method take a unique id number (special key) as a parameter and removes 
+        that id from the database, thereby removing the post itself.  MongoDB automatically creates special keys 
+        for items in collections.
+      </p>
+
+      <h4>Client</h4>
+
+      <blockquote>
+          When you write a template as 
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;template name="foo"&gt;...&lt;/template&gt; 
+            </code>
+          </pre>
+          in an HTML file in your app, Meteor generates a "template object" named Template.foo.
+
+          <cite>
+              Meteor Docs:  Templates
+          </cite>
+      </blockquote>
 
 
+      <pre class="language-javascript">
+        <code class="language-javascript">
+if (Meteor.isClient) {
+    Template.addPost.events({
+        'submit form': function(event, template) {
+            event.preventDefault();
+
+            var post = {
+                title: template.find('.title'),
+                story: template.find('.story'),
+                author: template.find('.author'),
+                date: Date.create().full()
+            };
+
+            Meteor.call('addPost', post.title.value, post.story.value, post.author.value, post.date);
+
+            post.title.value = '';
+            post.story.value = '';
+            post.author.value = '';
+        }
+    });
+
+    Template.postList.helpers({
+        posts: function() {
+            return Posts.find();
+        }
+    });
+
+    Template.postList.events({
+       'click .delete': function() {
+           Meteor.call('deletePost', this._id);
+       }
+    });
+}
+        </code>
+      </pre>
+
+      <p>
+        In the client, we add an event handler to our <code>addPost</code> template that takes the 
+        "submit form" event and the template itself as its parameters.  We create a post object and store 
+        the corresponding input fields.  Then, we call the <code>addPost</code> method we created in the server, 
+        and pass it the values from the input fields.  We create a human-readable date with a Sugar method.  
+        After, we set the input values to empty strings to "reset" the input fields.
+      </p>
+
+      <p>
+        In order for the list of posts to show up on the page, we create a <code>postList</code> helper that 
+        simply returns all posts.
+      </p>
+
+      <p>
+        Finally, we want any user to be able to delete any post, so we create a <code>postList</code> event 
+        handler that calls the <code>deletePost</code> method from the server and passes in the selected post 
+        id when the user clicks the trash can icon with the class of <code>.delete</code>.
+      </p>
+
+      <p>
+        Let's play around with StoryPost to see if it works as expected!
+      </p>
+
+      <h3>Console</h3>
+
+      <p>
+        There's another way to add and remove posts from the database!  In our browser (preferably Google Chrome), 
+        we'll open our console by pressing Command + Option + i (on a Mac), click the "Console" tab if it's not 
+        already open, and type the following:
+      </p>
+
+      <pre class="language-javascript">
+        <code class="language-javascript">
+Posts.insert({title: "Once Upon a Time", story: "There was an old lady who lived in a shoe.", author: "Pen Name", date: Date.create().full()});
+        </code>
+      </pre>
+
+      <p>
+        The console will return the secret key of the post we just created, and the post will appear on the web 
+        page just as it does when we add posts using the form.  Now let's copy the secret key from the console 
+        and run the following:
+      </p>
+
+      <pre class="language-javascript">
+        <code class="language-javascript">
+Posts.remove("paste unique number here");
+        </code>
+      </pre>
+
+      <p>
+        The post we just created will be removed from the database and the page.  This is Minimongo, "Meteor's 
+        client-side Mongo emulator."
+      </p>
+
+      <h3>Summary</h3>
+
+      <p>
+        Don't see the utility of an anonymous app?  <a href="http://pegleg.it" target="_blank">Pegleg</a>, 
+        also built with Meteor, is a Netflix alternative that collects full-length movies from YouTube for your 
+        viewing pleasure.  You don't need to create an account with Pegleg to watch videos or to add videos 
+        to its collection (because Pegleg has no user account system).  Other anonymous viewers confirm or 
+        disconfirm the authenticity of the video.
+      </p>
+
+      <p>
+        In the near future, I bet the Internet is going to see more apps without user authentication, or at least 
+        a different kind of user authentication then we're used to.
+      </p>
+
+      <h3>Extra Reading</h3>
+
+      <ol>
+          <li>
+            <a href="http://docs.meteor.com/#meteor_isclient" target="_blank">Meteor Docs:  isClient/isServer</a>
+          </li>
+
+          <li>
+            <a href="http://docs.meteor.com/#collections" target="_blank">Meteor Docs:  Collections</a>
+          </li>
+
+          <li>
+            <a href="http://docs.meteor.com/#meteor_methods" target="_blank">Meteor Docs:  Meteor.methods()</a>
+          </li>
+
+          <li>
+            <i class="fa fa-usd"></i><a href="https://www.udemy.com/meteor-course/#/" target="_blank">Meteor:  Build a Real-Time Web App Using Only JavaScript</a> (Meteor 0.7)
+          </li>
+
+          <li>
+            <a href="http://docs.mongodb.org/manual/" target="_blank">MongoDB Manual</a>
+          </li>
+      </ol>
 
    </article>
 </template>
