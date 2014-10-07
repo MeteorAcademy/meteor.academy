@@ -16,7 +16,14 @@
         to the world."
       </p>
 
-      <img src="three/storypost.png">
+      <figure>
+        <img src="three/storypost.png">
+
+        <figcaption>
+            <a href="http://storypost.meteor.com" target="_blank">StoryPost</a> is a single-page app 
+            that enables users to post text anonymously.
+        </figcaption>
+      </figure>
 
       <h3>Create a New Project</h3>
 
@@ -39,9 +46,12 @@ meteor add mquandalle:stylus natestrauser:font-awesome digilord:sugarjs
       <h4>Stylus</h4>
 
       <p>
-        Stylus is a minimalist CSS pre-processor created by [someone] to make CSS "expressive" and 
+        Stylus is a minimalist CSS pre-processor created by 
+        <a href="https://github.com/LearnBoost" target="_blank">LearnBoost</a> to make CSS "expressive" and 
         "dynamic."  The motto:  "CSS needs a hero."  Meteor already has an officially supported 
-        Stylus package available, but we're going to use [mquandalle]'s version from Atmosphere 
+        Stylus package available, but we're going to use 
+        <a href="https://atmospherejs.com/mquandalle" target="_blank">Maxime Quandalle's</a> 
+        version from Atmosphere 
         because it comes with Jeet, a flexible (and fun!) front-end framework, Nib for CSS3 extensions, 
         <em>and</em> Rupture for easy media queries.  Granted, we're not going to be using all of that 
         for this project, but just knowing they're there is comforting, don't you think?
@@ -66,14 +76,35 @@ meteor add mquandalle:stylus natestrauser:font-awesome digilord:sugarjs
       <blockquote>
           Font Awesome gives your scalable vector icons that can be instantly customized &mdash; size, 
           color, drop shadow, and anything that can be done with the power of CSS.
+
+          <br>
+          <cite>
+              <a href="http://fontawesome.io" target="_blank">Font Awesome</a>
+          </cite>
       </blockquote>
+
+      <p>
+        Font Awesome is a great way to add a little pizzazz to your projects!  If you haven't had a chance to 
+        use it yet, go nuts!
+      </p>
 
       <h4>Sugar</h4>
 
       <blockquote>
           Sugar is a JavaScript library that extends native objects with helpful methods.  It it designed to 
           be intuitive, unobtrusive, and let you do more with less code.
+          
+          <br>
+          <cite>
+              <a href="http://www.sugarjs.com" target="_blank">Sugar</a>
+          </cite>
       </blockquote>
+
+      <p>
+        I know I've just blasphemed by suggesting you use Sugar for StoryPost, but I seriously love it.  You're 
+        welcome to use <a href="https://atmospherejs.com/mrt/moment" target="_blank">Moment, 
+        packaged for Meteor</a>, instead.
+      </p>
 
       <h3>HTML and CSS</h3>
 
@@ -279,7 +310,7 @@ if (Meteor.isServer) {
           in an HTML file in your app, Meteor generates a "template object" named Template.foo.
 
           <cite>
-              Meteor Docs:  Templates
+              <a href="http://docs.meteor.com/#templates_api" target="_blank">Meteor Docs:  Templates</a>
           </cite>
       </blockquote>
 
