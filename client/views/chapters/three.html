@@ -2,12 +2,161 @@
    <article>
       <h2>
          Chapter 3:
-         <small>Post</small>
+         <small>StoryPost</small>
       </h2>
 
       <p>
-         Available week of October 3rd!
+        Now that we can create barebones single-page and multipage static websites, it's time 
+        to start working with a database!  Meteor comes with MongoDB, a JSON-style, document-based 
+        NoSQL database built for flexibility and scalability.
       </p>
+
+      <p>
+        Our next project, StoryPost, is an anonmyous app that enables anyone to "tell their story 
+        to the world."
+      </p>
+
+      <img src="three/storypost.png">
+
+      <h3>Create a New Project</h3>
+
+      <p>
+        Let's start by adding all of the smart packages we're going to need for this project:
+        <pre>
+            <code>
+                meteor add mquandalle:stylus natestrauser:font-awesome digilord:sugarjs
+            </code>
+        </pre>
+      </p>
+
+      <p>
+        Now that Meteorite has been folded into the official Meteor package system, we can add 
+        multiple packages from the Atmosphere catalog to our project at once!
+
+        <img src="three/add-packages.png">
+      </p>
+
+      <h4>Stylus</h4>
+
+      <p>
+        Stylus is a minimalist CSS pre-processor created by [someone] to make CSS "expressive" and 
+        "dynamic."  The motto:  "CSS needs a hero."  Meteor already has an officially supported 
+        Stylus package available, but we're going to use [mquandalle]'s version from Atmosphere 
+        because it comes with Jeet, a flexible (and fun!) front-end framework, Nib for CSS3 extensions, 
+        <em>and</em> Rupture for easy media queries.  Granted, we're not going to be using all of that 
+        for this project, but just knowing they're there is comforting, don't you think?
+      </p>
+
+      <h4>Jeet</h4>
+
+      <p>
+        Jeet is a front-end framework/grid system that doesn't add propriety classes to your HTML, as 
+        opposed to the vastly more popular frameworks Twitter Boostrap and Zurb's Foundation.  I'll be 
+        using Jeet for all of our sample applications going forward and for many of my personal projects.
+      </p>
+
+      <p>
+        I don't have anything against Bootstrap or Foundation (my favorite!), but when writing tutorials and 
+        coding sample applications, I find the more robust frameworks just get in the way.  Foundation, in 
+        particular, really shines in large-scale production apps!
+      </p>
+
+      <h4>Font Awesome</h4>
+
+      <blockquote>
+          Font Awesome gives your scalable vector icons that can be instantly customized &mdash; size, 
+          color, drop shadow, and anything that can be done with the power of CSS.
+      </blockquote>
+
+      <h4>Sugar</h4>
+
+      <blockquote>
+          Sugar is a JavaScript library that extends native objects with helpful methods.  It it designed to 
+          be intuitive, unobtrusive, and let you do more with less code.
+      </blockquote>
+
+      <h3>HTML and CSS</h3>
+
+      <p>
+        Like we did in the previous chapter, let's change the name of our files to: <code>main.html</code>, 
+        <code>main.js</code>, and <code>main.style</code> (the extension for Stylus).  In 
+        <code>main.html</code>, we'll import Jeet, Nib, and Rupture at the top of the file and add our custom 
+        styles below that.
+      </p>
+
+      <pre class="language-css">
+        <code class="language-css">
+@import 'jeet'
+@import 'nib'
+@import 'rupture'
+
+$lora = 'Lora', serif
+
+body
+    font-family: sans-serif
+    font-size: 1.15em
+    h1
+        font-family: $lora
+    p
+        font-family: sans-serif
+        font-weight: 300
+        line-height: 1.5em
+    .container
+        center(1000px)
+article
+    margin-bottom: 4em
+
+
+footer
+    text-align: center 
+        </code>
+      </pre>
+
+      <h4>Templates</h4>
+
+      <p>
+        In <code>main.html</code>:
+      </p>
+
+      <pre class="language-markup">
+        <code class="language-markup">
+        </code>
+      </pre>
+
+      <h3>Main.js</h3>
+
+      <p>
+        In our <code>main.js</code> file, let's delete the content of <code>if (Meteor.isClient)</code> and 
+        <code>if (Meteor.isServer)</code>, and switch <code>if (Meteor.isServer)</code> to the top of the 
+        file, until we're left with this:
+      </p>
+
+      <pre class="language-javascript">
+        <code class="language-javascript">
+        if (Meteor.isServer) {}
+
+        if (Meteor.isClient) {}
+        </code>
+      </pre>
+
+      <p>
+        Code placed inside the <code>if (Meteor.isServer) {}</code> block will run on the server (back-end).  
+        Likewise, code placed inside the <code>if (Meteor.isClient) {}</code> block will run on the client 
+        (front-end).
+      </p>
+
+      <p>
+        Switching the <code>isServer</code> code block to the top of the file is a personal preference 
+        of mine.  The methods we'll be creating on the server determine what we can see and interact with 
+        on the client, so this arrangement just makes more sense in my mind.  It doesn't matter how they 
+        are arranged.  Find what works for you and helps you understand.
+      </p>
+
+      <h4>Collections</h4>
+
+
+
+
    </article>
 </template>
 
